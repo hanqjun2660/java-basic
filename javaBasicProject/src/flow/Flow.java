@@ -180,4 +180,31 @@ public class Flow {
                 System.out.println("외국인이거나 유효하지 않은 주민등록번호입니다.");
         }
     }
+
+    // 반복문 (For문)
+    /*
+        for문은 반복횟수를 알고 있을 때 사용하기 적합하다.
+        for문은 초기화, 조건식, 증감식, 블럭 4개의 부분으로 나누어져 있고 조건식이 거짓이 되면 for문을 벗어난다.
+     */
+    public static void FlowEx8() {
+        // 아래와 같이 초기화, 조건식, 증감식, 블럭의 구조로 이루어져있다.
+        for(int i = 1; i <= 5; i++) {
+            System.out.println(i);
+        }
+
+        for (int i = 1; i <= 5; i++) {
+            System.out.print(i);
+        }
+    }
+
+    // for문으로 1부터 10까지 합계를 구해보자
+    public static void FlowEx9() {
+        int sum = 0;
+
+        for(int i = 1; i <= 10; i++) {
+            sum += i;
+        }
+
+        System.out.println("1부터 10까지 합계 : " + sum);
+    }
 }
