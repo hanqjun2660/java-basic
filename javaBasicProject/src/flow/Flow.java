@@ -359,4 +359,34 @@ public class Flow {
 
         System.out.println("합계: " + sum);
     }
+
+    // do-while문
+    /*
+        while문과 기본적인 구조는 같지만 do문 블럭의 내용을 먼저 실행하고 while문의 조건식을 평가한다.
+        쉽게 말해 do-while문은 조건식의 결과와 상관없이 최초 1회는 무조건 실행된다.
+     */
+
+    // 1부터 100까지의 숫자를 랜덤하게 생성하고 사용자로부터 숫자를 입력받아 맞출때까지 반복하는 프로그램을 작성해보자
+    public static void FlowEx19() {
+
+        int input = 0;      // 사용자로부터 입력받은 수를 저장
+        int answer = 0;     // Math.random 함수를 사용하여 1부터 100 사이의 값을 저장할 변수
+
+        answer = (int) (Math.random() * 100 + 1);
+        Scanner sc = new Scanner(System.in);
+
+        do {
+            System.out.print("1부터 100사이의 값을 입력하세요.");
+            input = sc.nextInt();
+
+            if(input > answer) {
+                System.out.println("더 작은 수로 다시 시도하세요.");
+            } else if(input < answer) {
+                System.out.println("더 큰 수로 다시 시도하세요.");
+            }
+
+        } while(input != answer);   // 입력한 숫자와 정답이 같으면 false가 나와야 하기때문에 해당 조건식을 작성
+
+        System.out.println("정답입니다.");
+    }
 }
