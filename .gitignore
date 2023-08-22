@@ -116,6 +116,9 @@ fabric.properties
 .ideaazureSettings.xml
 
 ### Java ###
+#Java file
+javaBasicProject/src/Main.java
+
 # Compiled class file
 .class
 
