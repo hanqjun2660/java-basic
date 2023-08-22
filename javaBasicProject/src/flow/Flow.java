@@ -262,4 +262,35 @@ public class Flow {
             System.out.println();
         }
     }
+
+    // for each문
+    /*
+        배열과 컬렉션에 저장된 요소에 접근할때 기존 for문보다 편리한 방법으로 처리할 수 있도록
+        for each문이 추가되었다. (JDK1.5 이후)
+
+        for(타입 변수명 : 배열 또는 컬렉션){
+            // 반복될 문장
+        }
+     */
+    // 배열을 만들어 for each문으로 출력을 해보자
+    public static void FlowEx14() {
+        int arr[] = {10,20,30,40,50};
+        int sum = 0;
+
+        // 기존 for문
+        for(int i = 0; i < arr.length; i++) {
+            System.out.printf("%d ", arr[i]);
+        }
+
+        System.out.println();
+
+        // for each문으로 작성하면 간결하다.
+        for(int tmp : arr) {
+            System.out.printf("%d ", tmp);
+            sum += tmp;
+        }
+        System.out.println();
+        System.out.println("sum= " + sum);
+    }
+
 }
