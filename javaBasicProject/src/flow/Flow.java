@@ -293,4 +293,70 @@ public class Flow {
         System.out.println("sum= " + sum);
     }
 
+    // while문
+    /*
+        for문보다 간략하게 작성이 가능하고 조건식과 코드 블럭으로만 이루어져 있다.
+        조건식이 참인동안 반복되며, 조건식의 연산결과가 거짓일때 while문을 빠져나온다.
+        조건식이 참인동안 항상 반복되기 때문에 무한루프에 빠지기 쉬우니 유념하자
+     */
+    public static void FlowEx15() {
+        int i = 5;
+
+        while (i-- != 0) {      // i가 0이 아닐때 true 즉, i가 0이 되면 반복을 중지하고 while문을 빠져나온다.
+            System.out.println(i + " - i can do it.");
+        }
+    }
+
+    // while문을 이용해서 각 자리수의 합을 출력해보자
+    public static void FlowEx16() {
+        int num = 0, sum = 0;
+        System.out.print("숫자를 입력하세요 (예 : 12345)>");
+
+        Scanner sc = new Scanner(System.in);
+        String tmp = sc.nextLine();
+        num = Integer.parseInt(tmp);
+
+        while(num != 0) {     // 입력받은 값이 0이 될때까지 반복
+            sum += num%10;      // num을 10으로 나눈 나머지를 sum에 더함
+            System.out.printf("sum=%3d num=%d%n", sum, num);
+
+            num /= 10;  // num = num / 10; num을 10으로 나눈 값을 다시 num에 저장
+        }
+        System.out.println("각 자리수의 합:" + sum);
+    }
+
+    // while을 사용하여 1부터 몇까지 더하면 누적합계가 100을 넘지 않는 수가 제일 큰 수가 되는지 알아보자
+    public static void FlowEx17() {
+        int sum = 0, i = 0;
+
+        // i를 1씩 증가시켜서 100이 넘지 않을때까지 더하여 100이하 제일 큰 수를 출력하자
+        while((sum += ++i) <= 100) {
+            System.out.printf("%d - %d%n", i, sum);
+        }
+    }
+
+    // while문을 사용하여 사용자로부터 숫자를 입력받다가 0을 입력하면 입력을 마치고 총합을 출력해보자
+    public static void FlowEx18() {
+        int num;
+        int sum = 0;
+        boolean flag = true;
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("합계를 구할 숫자를 입력하세요 (끝내려면 0을 입력)");
+
+        while(flag) {
+            System.out.print(">>");
+
+            String tmp = sc.nextLine();
+            num = Integer.parseInt(tmp);
+
+            if(num != 0) {
+                sum += num;     // 사용자가 0이 아닌 숫자를 입력하면 sum 변수에 중첩하여 더한다.
+            } else {
+                flag = false;   // 사용자가 0을 입력하면 flag를 false로 만들어 while문을 빠져나온다.
+            }
+        }
+
+        System.out.println("합계: " + sum);
+    }
 }
