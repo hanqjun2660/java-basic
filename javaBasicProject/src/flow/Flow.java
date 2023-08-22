@@ -207,4 +207,59 @@ public class Flow {
 
         System.out.println("1부터 10까지 합계 : " + sum);
     }
+
+    // 중첩 For문
+    /*
+        if문과 같이 for문안에 또 다른 for문을 포함시킬 수 있다.
+     */
+    public static void FlowEx10() {
+
+        // for문 안 중첩이 가능하다.
+        for(int i = 1; i <= 5; i++) {
+            for(int j = 1; j <= 10; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    // 중첩 for문을 이용하여 삼각형 모양의 *을 찍어보자 출력 라인수는 사용자로부터 입력받자
+    public static void FlowEx11() {
+        int num = 0;
+
+        System.out.print("*을 출력할 라인의 수를 입력해주세요.");
+
+        Scanner sc = new Scanner(System.in);
+        num = sc.nextInt();
+
+        for(int i = 0; i < num; i++) {
+            for(int j = 0; j <= i; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    // 그럼 중첩 for문을 이용해서 구구단을 출력해보자
+    public static void FlowEx12() {
+        for(int i = 2; i <= 9; i++) {
+            for(int j = 1; j <= i; j++) {
+                System.out.println(i + "x" + j + "=" + (i*j));
+            }
+        }
+    }
+
+    // 이번엔 for문과 if문을 사용하여 조건에 맞을때 공백을 출력해보자
+    public static void FlowEx13() {
+        for(int i = 1; i <= 5; i++) {
+            for(int j = 1; j <= 5; j++) {
+                if(i == j) {
+                    System.out.print("[" + i + "," + j +"]");
+                } else {
+                    System.out.printf("%5c", ' ');
+                }
+            }
+            System.out.println();
+        }
+    }
 }
