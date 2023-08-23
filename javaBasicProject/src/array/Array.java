@@ -176,4 +176,57 @@ public class Array {
 
         System.out.println(Arrays.toString(arr));
     }
+
+    // 정렬
+    public static void ArrayEx9() {
+        int[] numArr = new int[10];
+
+        for(int i = 0; i < numArr.length; i++) {
+            System.out.print(numArr[i] = (int) (Math.random() * 10));
+        }
+        System.out.println();
+
+        for(int i = 0; i < numArr.length-1; i++) {
+            boolean changed = false;                        // 자리바꿈이 있었는지 체크
+
+            for(int j = 0; j < numArr.length-1-i; j++) {
+                if(numArr[j] > numArr[j+1]) {               // 옆에 값이 작으면 바꾼다
+                    int temp = numArr[j];
+                    numArr[j] = numArr[j+1];
+                    numArr[j+1] = temp;
+                    changed = true;                         // 자리바꿈이 되었으니 변경
+                }
+            }
+
+            if(!changed) {
+                break;                                      // 자리바꿈이 일어나지 않았으면 반복문을 벗어난다.
+            }
+
+            for(int k = 0; k < numArr.length; k++) {
+                System.out.print(numArr[k]);                // 정렬된 결과를 출력한다.
+            }
+            System.out.println();
+        }
+    }
+
+    // 빈도수 구하기
+    public static void ArrayEx10() {
+        int[] numArr = new int[10];
+        int[] counter = new int[10];
+
+        for(int i = 0; i < numArr.length; i++) {
+            numArr[i] = (int) (Math.random() * 10);     // 0 ~ 9까지 임의의 수를 저장
+            System.out.print(numArr[i]);
+        }
+
+        System.out.println();
+
+        for(int i = 0; i < numArr.length; i++) {
+            counter[numArr[i]]++;       // 만약 numArr[0]의 값이 4라면 counter[4]의 값이 1 증가한다.
+        }
+
+        for(int i = 0; i < numArr.length; i++) {
+            System.out.println(i + "의 개수 : " + counter[i]);
+        }
+    }
 }
