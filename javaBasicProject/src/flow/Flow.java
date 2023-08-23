@@ -389,4 +389,19 @@ public class Flow {
 
         System.out.println("정답입니다.");
     }
+
+    // continue문
+    /*
+        반복문 내에서만 사용이 가능하며 반복이 진행되는 도중 continue문을 만나면
+        반복문 끝으로 가 다음 반복을 진행한다. 주로 if문과 같은 조건문과 함께 사용하여,
+        조건식의 조건에 만족하는 경우 continue문을 사용하여 건너뛰는 형식으로 사용한다.
+     */
+    public static void FlowEx20() {
+        for(int i = 0; i <= 10; i++) {
+            if(i % 3 == 0) {  // 3의 배수인것들을 제외
+                continue;
+            }
+            System.out.println(i);
+        }
+    }
 }
