@@ -36,4 +36,24 @@ public class Array {
         System.out.println(iArr3);
         System.out.println(chArr);
     }
+
+    // 배열의 복사
+    /*
+        기존 배열을 새로운 배열에 복사해보자
+     */
+    public static void ArrayEx2() {
+        int[] arr = new int[5];
+        int[] tmp = new int[arr.length * 2];
+
+        for(int i = 0; i < arr.length; i++) {
+            tmp[i] = arr[i];
+        }
+
+        arr = tmp;
+
+        // 기존 arr이 tmp를 가리키게 되어 아래 출력되는 주소는 동일하게 된다
+        // arr과 tmp는 이름만 다를뿐 같은 배열을 가리킨다.
+        System.out.println("arr : " + arr);
+        System.out.println("tmp : " + tmp);
+    }
 }
