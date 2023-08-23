@@ -431,4 +431,26 @@ public class Flow {
             System.out.println("선택하신 메뉴는 " + menu + " 번 입니다.");
         }
     }
+
+    // 이름 붙은 반복문
+    /*
+        break문으로는 근접한 반복문 한개만 벗어날 수 있다.
+        반복문이 중첩된 상황에서 완전히 벗어나긴 힘들다. 그럴때 중첩된 반복문에 이름을 붙여줌으로써
+        벗어날 수 있다.
+     */
+    public static void FlowEx22() {
+
+        // 제일 상단 반복문에 loop1이라는 이름을 붙여주었다.
+        loop1 : for(int i = 2; i <= 9; i++) {
+            for(int j = 1; j <= 9; j++) {
+                if(j == 5) {
+                    break loop1;        // 제일 상단 반복문의 이름을 지정해줌으로 벗어난다.
+                    // break;           // 가장 근접한 반복문만 벗어난다.
+                    // countinue loop1  // 제일 상단 반복문의 증감식으로 간다.
+                    // countinue        // 가장 근접한 반복문의 증감식으로 간다.
+                }
+                System.out.println(i + "*" + j + "=" + i * j);
+            }
+        }
+    }
 }
