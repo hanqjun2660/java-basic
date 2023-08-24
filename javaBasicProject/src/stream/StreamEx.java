@@ -1,8 +1,10 @@
 package stream;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamEx {
@@ -43,5 +45,25 @@ public class StreamEx {
                 .thenComparing(Comparator.naturalOrder()))
                 .forEach(System.out::println);
 
+    }
+
+    // List에서 특정 조건을 만족하는 결과만 골라내어 출력해보자
+    public static void StreamEx3() {
+        List<Integer> numbers = new ArrayList<>();
+        numbers.add(10);
+        numbers.add(25);
+        numbers.add(30);
+        numbers.add(45);
+        numbers.add(50);
+
+        // 스트림으로 30보다 큰 숫자만 필터링 하여 새로운 리스트로 만들자
+        List<Integer> filteredNumbers = numbers.stream()
+                .filter(number -> number > 30)
+//              .sorted()       // 오름차순으로 정렬됨
+                .sorted(Comparator.reverseOrder())  // 내림차순으로 정렬됨
+                .collect(Collectors.toList());
+
+        System.out.println("Original List: " + numbers);
+        System.out.println("Filtered List: " + filteredNumbers);
     }
 }
